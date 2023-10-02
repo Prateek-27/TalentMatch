@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Upload the Resume</h1>
+    <form method="POST" enctype="multipart/form-data" action="/upload">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="skills" class="form-label">Skills (comma-separated):</label>
+            <input type="text" name="skills" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="resume" class="form-label">Resume (PDF only):</label>
+            <input type="file" name="resume" class="form-control" accept=".pdf" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
+{% endblock %}

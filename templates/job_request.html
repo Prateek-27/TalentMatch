@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Resume Matching System</h1>
+    <form method="POST" action="/match">
+        <div class="mb-3">
+            <label for="job_description" class="form-label">Enter Job Description:</label>
+            <textarea class="form-control" id="job_description" name="job_description" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Match Resumes</button>
+    </form>
+</div>
+{% endblock %}

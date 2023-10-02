@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matching Results</title>
+</head>
+<body>
+    <h1>Matching Results</h1>
+    
+    {% if matched_resumes %}
+        <h2>Matched Resumes:</h2>
+        <ul>
+            {% for result in matched_resumes %}
+                <li>
+                    <strong>Job Title:</strong> {{ result['job']['title'] }}<br>
+                    <strong>Match Score:</strong> {{ result['match_score'] }}<br>
+                    <strong>Job Description:</strong> {{ result['job']['description'] }}<br>
+                    <strong>Required Skills:</strong> {{ result['job']['skills'] | join(', ') }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No matching resumes found.</p>
+    {% endif %}
+    
+    <a href="/">Back to Home</a>
+</body>
+</html>
