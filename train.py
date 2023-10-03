@@ -6,7 +6,7 @@ nlp = spacy.load("en_core_web_sm")
 ner = nlp.get_pipe("ner")
 
 # Add labels
-ner.add_label("LANGUAGES")
+ner.add_label("TECH")
 
 
 train_data = [
