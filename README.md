@@ -77,7 +77,6 @@ TalentMatch provides a seamless interface for companies and candidates, streamli
 - **Front-End:**
   - HTML5: Markup language used for structuring and presenting content.
   - CSS3: Style-sheet language used for describing the look and formatting of the document.
-  - JavaScript: Scripting language used to create dynamic content like interactive forms and animations.
 
 - **Infrastructure:**
   - GitHub: Platform used for version control and collaborative development of the project.
